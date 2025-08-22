@@ -136,8 +136,8 @@
   position: absolute;
   right: 12px;
   bottom: 12px;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   border: 1px solid #b7e8c9;
   background: #f4fff7;
@@ -156,3 +156,13 @@
   }
 }
 
+/* PrimeIcons (for the heart) */
+@import "primeicons/primeicons.css";
+.info{
+  height: 70px;
+}
+
+.meta {
+  gap: 5px !important;
+  flex-wrap: wrap; 
+}

@@ -3,45 +3,38 @@
   <!-- <div class="container py-5">
     <app-ds-viec-lam [viecLams]="jobPosts"></app-ds-viec-lam>
   </div> -->
-
-
-  
 </div>
+
+
 <div class="page">
   <div class="job-grid">
-<div
-  class="job-card"
-  *ngFor="let j of jobPosts; let i = index"
-  [class.highlighted]="isHighlighted(j.tags)"
->
+    <div class="job-card" *ngFor="let j of jobPosts; let i = index" [class.highlighted]="isHighlighted(j.tags)">
       <img class="logo" [src]="j.logo" alt="" />
 
       <div class="details">
-        <div class="title" title="{{ j.title }}">{{ j.title }}</div>
-        <div class="company" title="{{ j.company }}">{{ j.company }}</div>
-
-        <div class="tags" *ngIf="j.tags?.length">
-          <span
-            class="chip"
-            *ngFor="let t of j.tags"
-            [class.chip-success]="t.label==='TOP'"
-            [class.chip-warning]="t.label==='NỔI BẬT'"
-            [class.chip-danger]="t.label==='HOT'"
-          >
+        <div class="info">
+          <div class="tags" *ngIf="j.tags?.length">
+            <!-- <span class="chip" *ngFor="let t of j.tags" [class.chip-success]="t.label==='TOP'"
+            [class.chip-warning]="t.label==='NỔI BẬT'" [class.chip-danger]="t.label==='HOT'">
             {{ t.label }}
-          </span>
+          </span> -->
+          </div>
+          <div class="title" title="{{ j.title }}">{{ j.title }}</div>
+          <div class="company" title="{{ j.company }}">{{ j.company }}</div>
         </div>
+
+
 
         <div class="meta">
-          <span class="pill salary">{{ j.salary }}</span>
-          <span class="pill location">{{ j.location }}</span>
+          <p-tag severity="info" value="{{ j.salary }}"></p-tag>
+          <p-tag severity="success" value="{{ j.location }}"></p-tag>
         </div>
+
       </div>
 
-      <button class="heart" type="button" aria-label="save">
+      <!-- <button class="heart" type="button" aria-label="save">
         <i class="pi pi-heart"></i>
-      </button>
+      </button> -->
     </div>
   </div>
 </div>
-
